@@ -9,14 +9,18 @@ window.authPersistence = {
     },
     /** Get Item from local storage */
     getTokenAuth(){
-        
         window.localStorage.getItem('user')
+    },
+    getIdAuth(){
         window.localStorage.getItem('id')
+    },
+    getNameAuth(){
+        window.localStorage.getItem('name')
     },
     /** Remove Item from local storage */
     clearTokenAuth(){
 
-        window.localStorage.removeItem('user')
-        window.localStorage.removeItem('id');
+        window.localStorage.clear()
+
     }
 }
