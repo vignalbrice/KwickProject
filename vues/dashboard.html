@@ -34,8 +34,10 @@
           </nav>
         <div class="container">
                 <p class="display-3 text-center">KwickChat!</p>
-                <div class="mb-4">
+                <p>Personnes connectées :</p><div class="mb-4 list-user row">
                 </div>
+                <button class="btn show-newmsg">
+                </button>
                     <div class="chat">
                         <div class="chat-log">
                         </div>
@@ -51,6 +53,10 @@
                               </button>
                             </div>
                           </div>
+                          <div class="emoji-list">
+                            <a class="emoji">😀</a>
+                            <a class="emoji">😂</a>
+                          </div>
                     </form>
         </div>
         <!-- Library JavaScript -->
@@ -58,6 +64,8 @@
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/locale/fr.js"></script>
         <script src="/js/dashboard.js"></script>
         <script src="/js/chat.js"></script>
         <script src="/js/authPersistence.js"></script>
