@@ -113,3 +113,44 @@ input.form-control:active {
 p.disabled-text{
     display: none!important;
 }
+.show-newmsg{
+    margin-top: 3%;
+    margin-left: 3%;
+    color:#FFF;
+    text-decoration: none;
+    position: absolute;
+    background: #34495e;
+    border-radius:15px;
+    font-weight: 600;
+}
+/** Emoji List */
+.emoji-list{
+    display: block;
+    margin-top: -3%;
+    padding: 5px;
+}
+.emoji-list a{
+    text-decoration: none;
+    border: 1px solid #ecf0f1;
+    background:#ecf0f1;
+    border-radius: 3px;
+    padding:3px;
+    cursor: pointer;
+    margin-bottom:3px;
+}
+.emoji-list a:hover{
+
+};
+/** User List */
+.list-user{
+}
+.user-connected{
+    padding: 5px;
+}
+.connected{
+    color:#27ae60;
+}
+/** It was for only this purpose
+.unconnected{
+    color:#95a5a6;
+}**/
