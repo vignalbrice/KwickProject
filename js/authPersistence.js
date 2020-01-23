@@ -9,18 +9,24 @@ window.authPersistence = {
     },
     /** Get Item from local storage */
     getTokenAuth(){
-        window.localStorage.getItem('user')
+        return window.localStorage.getItem('user')
     },
     getIdAuth(){
-        window.localStorage.getItem('id')
+        return window.localStorage.getItem('id')
     },
     getNameAuth(){
-        window.localStorage.getItem('name')
+        return window.localStorage.getItem('name')
+    },
+    getUsersActivities(){
+        return window.localStorage.getItem('showUsers')
     },
     /** Remove Item from local storage */
     clearTokenAuth(){
-
-        window.localStorage.clear()
+        window.localStorage.removeItem('user')
+        window.localStorage.removeItem('id')
+        window.localStorage.removeItem('name')
+        window.localStorage.removeItem('authenticated')
+        window.localStorage.removeItem('logout')
 
     }
 }

@@ -6,40 +6,7 @@
         var email = $("input#emailSignIn");
         var password = $("input#passwordSignIn");
         var checkbox = $("#checkSignIn");
-        function validateEmail() {
-            $('#form-login').on('submit', function (e) {
-                e.preventDefault();
-                if (email.val() === '') {
-                    Swal.fire({
-                        icon: 'error',
-                        title: 'Oops...Une erreur est survenue!',
-                        text: 'l\'email doit contenir au moins un @ et un point',
-                      })
-                }
-            })
-        }
-        function validatePassword() {
-            $('#form-login').on('submit', function (e) {
-                e.preventDefault();
-                if (password.val() === '') {
-                    Swal.fire({
-                        icon: 'error',
-                        title: 'Oops...Une erreur est survenue!',
-                        text: 'le mote de passe doit contenir au moins 3 caractères.',
-                      })
-                }
-            })
-        }
-        function validateSubmit() {
-            $("#form-login").on('submit', function (e) {
-                if (validateEmail() && validatePassword()) {
-                    sendLoginFormToKwick();
-                    return true;
-                } else {
-                    return false;
-                }
-            })
-        }
+
         function sendLoginFormToKwick() {
             $('#form-login').on('submit', function (e) {
                 e.preventDefault();
@@ -49,7 +16,21 @@
                         dataType: 'jsonp',
                         crossDomain: true,
                     });
-                    request.done(function (success) {
+                    if(email.val() != ''  && password.val() === ''){
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Oops...Une erreur est survenue!',
+                            text: 'le mote de passe doit contenir au moins 3 caractères.',
+                          })
+                    }
+                    if(email.val() ===''  && password.val() != ''){
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Oops...Une erreur est survenue!',
+                            text: 'Veuillez saisir un email valide.',
+                          })
+                    }
+                    request.done((success) => {
                         console.log(success)
                         if(success.result.status === 'failure'){
                             Swal.fire({
@@ -59,20 +40,23 @@
                               }, () =>  $(document).reload())
                         }
                         if(success.result.status === 'done'){
-                            Swal.fire({
-                                icon: 'success',
-                                title: 'Vous avez bien été connecter !',
-                                text: success.result.message,
-                              }).then(() => window.location.href= '../vues/dashboard.html')
-                              if(checkbox.is(":checked")){
-                                    window.authPersistence.setTokenAuth(success.result.token,success.result.id, email.val());
-                              }
+                            window.authPersistence.setTokenAuth(success.result.token,success.result.id, email.val());
+                            window.localStorage.setItem('authenticated', 'true');
+                            window.localStorage.removeItem('logout')
+                            window.location.href ='/vues/dashboard.html'
                         }
                         e.preventDefault()
                     });
-                    request.fail(function (textStatus) {
-                        alert("Request failed: " + textStatus);
+                    request.fail(() => {
+                        //alert("Request failed: " + textStatus);
                         e.preventDefault()
+                        if (email.val() === '' && password.val() === '') {
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Oops...Une erreur est survenue!',
+                                text: 'Vous devez remplir tout les champs !',
+                              })
+                        }
                     });
                 })
             }

@@ -89,7 +89,9 @@ input.form-control:active {
 	float: left;
 	border-radius: 4px;
 	box-shadow: 0 1px 2px rgba(0,0,0,.1);
-	clear: both;
+    clear: both;
+    overflow: hidden;
+    word-wrap: break-word;
 }
 
 .chat-log__item.chat-log__item--own {
@@ -115,13 +117,26 @@ p.disabled-text{
 }
 .show-newmsg{
     margin-top: 3%;
-    margin-left: 3%;
+    margin-left: 5%;
     color:#FFF;
     text-decoration: none;
     position: absolute;
     background: #34495e;
     border-radius:15px;
     font-weight: 600;
+}
+.show-arrow{
+    margin-top: auto;
+    margin-left: auto;
+    text-decoration: none;
+    position: absolute;
+    background: #34495e;
+    font-weight: 600;
+    float: right;
+    margin:10px;
+}
+.show-arrow i {
+    color:#FFF;
 }
 /** Emoji List */
 .emoji-list{
@@ -147,6 +162,10 @@ p.disabled-text{
 .user-connected{
     padding: 5px;
 }
+.dropdown-toggle:after { content: none!important; }
+.dropdown-menu{
+    padding:5px;
+}
 .connected{
     color:#27ae60;
 }
@@ -154,3 +173,13 @@ p.disabled-text{
 .unconnected{
     color:#95a5a6;
 }**/
+#dropdownMenu2 i{
+    font-size:20px;
+}
+.text-user{
+    color:#333;
+    font-weight: 600;
+}
+.link-redirect{
+    font-weight: 600;
+}

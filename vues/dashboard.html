@@ -11,7 +11,7 @@
     </head>
     <body>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#">Kwick!</a>
+            <a class="navbar-brand" href="#"><i class="fas fa-paper-plane"></i> Kwick!</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
@@ -24,20 +24,23 @@
                     <a class="nav-link" href="profil.html">Profil</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Utilisateurs</a>
-                </li>
-                <li class="nav-item">
                   <a class="nav-link" href="#" id="logout"><i class="fas fa-sign-out-alt" style="font-size: 1.5em;"></i></a>
                 </li>
               </ul>
             </div>
           </nav>
         <div class="container">
-                <p class="display-3 text-center">KwickChat!</p>
-                <p>Personnes connectées :</p><div class="mb-4 list-user row">
+                <p class="display-3 text-center"><i class="fas fa-paper-plane"></i> KwickChat!</p>
+                <div class="mb-4 list-user">
+                    <a class="btn dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <i class="fas fa-users"><p class="text-user"></p></i>
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                    </div>                    
+                    </button>
                 </div>
-                <button class="btn show-newmsg">
-                </button>
+                <button class="btn show-newmsg"></button>
+                <a class="btn show-arrow"></a>
                     <div class="chat">
                         <div class="chat-log">
                         </div>
@@ -54,8 +57,6 @@
                             </div>
                           </div>
                           <div class="emoji-list">
-                            <a class="emoji">😀</a>
-                            <a class="emoji">😂</a>
                           </div>
                     </form>
         </div>
@@ -66,6 +67,9 @@
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/locale/fr.js"></script>
+        <script src="../js/API.js"></script>
+        <script src="/js/addEmoji.js"></script>
+        <!--<script src="/js/onScrollLoad.js"></script>-->
         <script src="/js/dashboard.js"></script>
         <script src="/js/chat.js"></script>
         <script src="/js/authPersistence.js"></script>
